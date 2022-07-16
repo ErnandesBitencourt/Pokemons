@@ -29,6 +29,7 @@ const GlobalState = (props) => {
     useEffect(() => {
 
         const getDetails = async () => {
+            
             const newDetailsPokemon = []
 
             for (let pokemon of pokemons) {

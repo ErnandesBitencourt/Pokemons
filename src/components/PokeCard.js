@@ -5,6 +5,8 @@ import { goToPokemonDetailsPage } from "../routes/Coordinator";
 import { GlobalStateContext } from "../global/GlobalStateContext";
 
 const ContainerOne = styled.div`
+    height: 250px;
+    width: 200px;
 display: grid;
 grid-template-rows: 1fr 1fr;
 align-items: center;
@@ -12,7 +14,12 @@ justify-items: center;
 border: 1px solid black;
 padding: 40px 40px 40px 40px;
 margin: 10px 10px 10px 10px;
-background-color: #FF7F50;
+background-color: #fff;
+
+img{
+    height: 90%;
+    width: 70%;
+}
 `
 
 const Button = styled.button`
@@ -23,7 +30,7 @@ padding: 10px 10px 10px 10px;
   color:white;
   border-radius: 5px;
   &:hover {
-    background-color: #FFD700;
+    background-color: #30a7d7;
     color:black;
   }
 `

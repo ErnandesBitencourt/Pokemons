@@ -1,16 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
-import { GlobalStateContext } from "../global/GlobalStateContext";
-import { DetailsCard } from '../components/DetailsCard'
+import { GlobalStateContext } from "../../global/GlobalStateContext";
+import { DetailsCard } from '../../components/DetailsCard'
+import Header from "../../components/Header/Header"
+import { useNavigate } from "react-router-dom";
+import {goToPageBack} from "../../routes/Coordinator"
 
 const Body = styled.div`
-position: relative;
 height: 100%;
 width: 100%;
-background-color: #F0E68C;
+background-color: #ffff;
 `
 
 const PokemonDetailsPage = () =>{
+    const navigate = useNavigate ()
 
     const [pokeDetails, setPokeDetails] = useState(undefined)
 
@@ -51,9 +54,14 @@ const PokemonDetailsPage = () =>{
     const pokemons = pokeDetails && <DetailsCard pokemon={pokeDetails} addDeletePokemon={addDeletePokemon} />
 
     return (
+        
+        <>
+        <Header title={"Detalhes do Pokémons"}
+                leftButtonFunction={() => goToPageBack(navigate)}/>
         <Body>
             {pokemons}
         </Body>
+        </>
     )
 }
 

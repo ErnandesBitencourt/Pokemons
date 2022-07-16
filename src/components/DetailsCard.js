@@ -3,29 +3,19 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { goToPokedexPage } from '../routes/Coordinator'
 
-const Header = styled.div`
-display: grid;
-grid-template-columns: 1fr 4fr 1fr;
-align-items: center;
-justify-items: center;
-padding-right: 15px;
-margin-bottom: 20px;
-border: 1px solid black;
-background-color: #FF6347;
-`
 
 const Main = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 align-items: center;
 justify-items: center;
-background-color: #F0E68C;
+background-color: #ffff;
 `
 
 const ContainerOne = styled.div`
 border: 1px solid black;
 padding: 40px 40px 40px 40px;
-background-color: #FF7F50;
+background-color: #ffff;
 `
 
 const Button = styled.button`
@@ -42,21 +32,23 @@ padding: 10px 10px 10px 10px;
 `
 
 const Body = styled.div`
-position: relative;
+
 height: 100vh;
 width: 100vw;
-background-color: #F0E68C;
+background-color: #ffff;
+margin-top: 50px;
+
+img{
+    height: 150px;
+
+}
 `
 
 export const DetailsCard = (props) => {
     const navigate = useNavigate()
 
     return <Body>
-    <Header>
-        <Button onClick={() => goToPokedexPage(navigate)}>Voltar</Button>
-        <h2>{props.pokemon.name.toUpperCase()}</h2>
-        <Button onClick={() => props.addDeletePokemon(props.pokemon.name, props.pokemon.sprites.front_default)}>Adicionar/Remover da Pokedex</Button>
-    </Header>
+    
     <Main>
         <div>
             <ContainerOne>
